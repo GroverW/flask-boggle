@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boggle</title>
+</head>
+<body>
+    <div class="board_container">
+        <table class='board'>
+        {% for row in board %}
+            <tr>
+                {% for char in row %}
+                    <td>{{char}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div>
+        <p>Current Score: <b class="current-score"></b></p>
+        <p>High Score: <b class="high-score"></b></p>
+    </div>
+    <form id="user-input" action="" method="POST">
+        <input type="text" name="word-guess" id="word-guess">
+        <button>Enter</button>
+    </form>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+    <script src="/static/boggle.js"></script>
+</body>
+</html>
