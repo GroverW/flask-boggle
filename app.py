@@ -29,4 +29,21 @@ def check_word():
 
     return jsonify({"result": result}), 201, {"Content-Type": "application/json"}
 
+@app.route("/update_score", methods=["POST"])
+def update_score():
+    session["high-score"] = session.get("high-score", 0)
+    current_score = request.json.get("current-score")
+    
+    if session["high-score"] < current_score:
+        session["high-score"] = current_score
+
+    print("request-form:",request.json.get("current-score"))
+    print("current-score:",current_score)
+    print("high-score:",session["high-score"])
+
+    session["num-plays"] = session.get("num-plays",0) + 1
+
+    return jsonify({
+        "num-plays": session["num-plays"], 
+        "high-score": session["high-score"]})
 

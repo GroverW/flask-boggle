@@ -5,10 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Boggle</title>
-        <link rel=“stylesheet”
-        href=“https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css”
-        integrity=“sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T”
-        crossorigin=“anonymous”>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
         <div class="board_container">
@@ -24,7 +21,11 @@
         </div>
         <div>
             <p>Current Score: <span class="current-score">0</span></p>
-            <p>High Score: <b class="high-score">0</b></p>
+            <p>High Score: 
+                <span class="high-score">0</span>
+                in <span class="num-plays">0</span> plays
+            </p>
+            <p>Seconds Left: <span class="time-left"></span></p>
         </div>
         <form id="user-input" action="" method="POST">
             <input type="text" name="word-guess" id="word-guess" />
